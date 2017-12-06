@@ -1,7 +1,7 @@
 const {app, BrowserWindow, ipcMain, Tray} = require('electron')
 const path = require('path')
-
 const assetsDirectory = path.join(__dirname, 'assets')
+const reload = require('electron-reload')(__dirname)
 
 let tray = undefined
 let window = undefined

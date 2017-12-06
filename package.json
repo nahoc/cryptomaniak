@@ -12,5 +12,8 @@
   "devDependencies": {
     "electron-packager": "^7.3.0",
     "electron-prebuilt": "^1.2.7"
+  },
+  "dependencies": {
+    "electron-reload": "^1.2.2"
   }
 }

@@ -35,6 +35,7 @@ html {
 .window-content {
     background-color: transparent;
     margin-top: 40px;
+    flex-direction: column;
 }
 
 .toolbar {
@@ -76,6 +77,14 @@ html {
     right: 0;
     z-index: 1;
     top: 5px;
+}
+
+.tab {
+    display: none;
+}
+
+.tabActive {
+    display: block;
 }
 
 .tabButton {

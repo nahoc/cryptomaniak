@@ -29,7 +29,8 @@ html {
 
 .window-content {
   background-color: transparent;
-  margin-top: 40px; }
+  margin-top: 40px;
+  flex-direction: column; }
 
 .toolbar {
   box-shadow: none; }
@@ -67,6 +68,12 @@ html {
   right: 0;
   z-index: 1;
   top: 5px; }
+
+.tab {
+  display: none; }
+
+.tabActive {
+  display: block; }
 
 .tabButton {
   padding-top: 1px;
@@ -120,5 +127,22 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: #bbb; }
+
+.balance {
+  color: #3498db;
+  font-weight: 300;
+  font-size: 30px;
+  text-align: center;
+  background-color: #253443;
+  letter-spacing: 1px;
+  min-height: 66px;
+  transition-property: all;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0, 1, 5.5, 1); }
+  .balance .balanceAmount {
+    padding-top: 10px; }
+
+.closed {
+  min-height: 0; }
 
 /*# sourceMappingURL=style.css.map */

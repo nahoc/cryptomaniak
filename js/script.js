@@ -2,11 +2,26 @@ const {
   ipcRenderer,
   shell
 } = require('electron');
-const nodeConsole = require('console');
-let myConsole = new nodeConsole.Console(process.stdout, process.stderr);
+
+// Navigation
+$('.tabButton').click(function () {
+  $('.tabButton').removeClass('tabButtonActive');
+  $(this).addClass('tabButtonActive');
+
+  $('.tab').hide();
+
+  if (this.id === "marketTabButton") {
+    $('#marketTab').show();
+    $('#balance').toggleClass('closed');
+  }
+  if (this.id === "portfolioTabButton") {
+    $('#portfolioTab').show();
+    $('#balance').removeClass('closed');
+  }
+});
 
 const isNegative = (value) => {
-  if(value.indexOf('-') !== -1) {
+  if (value.indexOf('-') !== -1) {
     return "coinPriceChangeNegative";
   }
 }
@@ -20,14 +35,22 @@ const updateView = (marketTabCoins) => {
   marketTabCoins.forEach(element => {
     const coinName = element.name;
     const coinPrice = element.price_usd;
+    const coinSymbol = element.symbol;
     const coinPriceChange = element.percent_change_24h;
 
-    document.querySelector('#marketTabCoins').innerHTML += 
+    document.querySelector('#marketTabCoins').innerHTML +=
       '<li class="listItem">' +
-        '<img src="" width="16" height="16">' +
-          '<span class="coinName">' + coinName + '</span>' +
-          '<span class="coinPrice">$' + formatPrice(coinPrice) + 
-          '<br/><span class="coinPriceChange ' + isNegative(coinPriceChange) + '">' + coinPriceChange + '%</span></span>' +
+      '<img src="assets/coins/' + coinSymbol + '.svg" width="24" height="24" />' +
+      '<span class="coinName">' + coinName + '</span>' +
+      '<span class="coinPrice">$' + formatPrice(coinPrice) +
+      '<br/><span class="coinPriceChange ' + isNegative(coinPriceChange) + '">' + coinPriceChange + '%</span></span>' +
+      '</li>';
+
+    document.querySelector('#portfolioTabCoins').innerHTML +=
+      '<li class="listItem">' +
+      '<img src="assets/coins/' + coinSymbol + '.svg" width="24" height="24" />' +
+      '<span class="coinName">' + coinName + '</span>' +
+      '<input type="text" class="coinQuantity">' +
       '</li>';
   });
 }
@@ -38,19 +61,13 @@ const getMarketTabCoins = () => {
   fetch(url)
     .then(
       function (response) {
-        if (response.status !== 200) {
-          myConsole.log('Looks like there was a problem. Status Code: ' +
-            response.status);
-          return;
-        }
-
         response.json().then(function (data) {
           updateView(data);
         });
       }
     )
     .catch(function (err) {
-      myConsole.log('Fetch Error :-S', err);
+      // error
     });
 }
 
