@@ -12,6 +12,7 @@ html {
     --text-color: #333;
     --window-border-radius: 6px;
     --button-border-radius: 4px;
+    --input-border-radius: 4px;
     --font-size: 14px;
 }
 
@@ -118,6 +119,7 @@ html {
 .coinName {
     float: left;
     text-align: left;
+    letter-spacing: 0.3px;
 }
 
 .coinPrice {

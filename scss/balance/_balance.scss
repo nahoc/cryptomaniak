@@ -1,16 +1,27 @@
-.balance {
+.balanceTab {
     color: $peter;
     font-weight: 300;
     font-size: 30px;
     text-align: center;
     background-color: darken($midnight, 4%);
     letter-spacing: 1px;
-    min-height: 66px;
+    min-height: 92px;
     transition-property: all;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(0, 1, 5.5, 1);
     .balanceAmount {
         padding-top: 10px;
+        padding-bottom: 8px;
+    }
+    .balanceText {
+        font-weight: 400;
+        color: darken($white, 55%);
+        font-size: 12px;
+        text-transform: uppercase;
+        text-align: right;
+        padding: 5px 20px;
+        padding-bottom: 2px;
+        background-color: darken($midnight, 7%);
     }
 }
 

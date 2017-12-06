@@ -1,0 +1,10 @@
+#portfolioTab {
+    .coinQuantity {
+        text-align: right;
+        max-width: 90px;
+        border-radius: var(--input-border-radius);
+        border: 1px solid darken($midnight, 3%);
+        background-color: $midnight;
+        padding: 4px 8px;
+    }
+}
