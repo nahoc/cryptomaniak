@@ -130,13 +130,18 @@ html {
 ::-webkit-scrollbar-thumb {
   background: #bbb; }
 
-#portfolioTab .coinQuantity {
-  text-align: right;
-  max-width: 90px;
-  border-radius: var(--input-border-radius);
-  border: 1px solid #273646;
-  background-color: #2c3e50;
-  padding: 4px 8px; }
+#marketTab {
+  background-color: #34495e; }
+
+#portfolioTab {
+  background-color: #34495e; }
+  #portfolioTab .coinQuantity {
+    text-align: right;
+    max-width: 90px;
+    border-radius: var(--input-border-radius);
+    border: 1px solid #273646;
+    background-color: #2c3e50;
+    padding: 4px 8px; }
 
 .balanceTab {
   color: #3498db;
@@ -164,5 +169,30 @@ html {
 
 .closed {
   min-height: 0; }
+
+#settingsTab {
+  background-color: #34495e; }
+
+.settingsTabButton {
+  display: block;
+  font-size: 0;
+  background-image: url("../assets/settings.svg");
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  opacity: 0.5;
+  outline: 0; }
+  .settingsTabButton:hover {
+    cursor: pointer; }
+
+.settingName {
+  float: left;
+  text-align: left;
+  letter-spacing: 0.3px; }
 
 /*# sourceMappingURL=style.css.map */

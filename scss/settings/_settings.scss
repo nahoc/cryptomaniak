@@ -1,0 +1,28 @@
+#settingsTab {
+    background-color: $asphalt;
+}
+
+.settingsTabButton {
+    display: block;
+    font-size: 0;
+    background-image: url('../assets/settings.svg');
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    position: fixed;
+    top: 18px;
+    right: 20px;
+    opacity: 0.5;
+    outline: 0;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.settingName {
+    float: left;
+    text-align: left;
+    letter-spacing: 0.3px;
+}
