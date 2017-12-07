@@ -26,3 +26,19 @@
     text-align: left;
     letter-spacing: 0.3px;
 }
+
+.settingIcon {
+    opacity: 0.5;
+}
+
+.settingsSelect {
+    text-align: right;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    min-width: 90px;
+    padding: 4px 8px;
+    border-radius: var(--input-border-radius);
+    border: 1px solid darken($midnight, 3%);
+    background-color: $midnight;
+}
